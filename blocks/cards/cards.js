@@ -15,13 +15,7 @@ export default function decorate(block) {
     ul.append(li);
   });
 
-  ul.querySelectorAll('picture > img').forEach((img) =>
-    img.closest('picture').replaceWith(
-      createOptimizedPicture(
-        img.src, img.alt, false, [{ width: '750' }]
-      ), // Added trailing comma here
-    ), // Removed the newline before the closing parenthesis
-  );
+  ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
 
   ul.querySelectorAll('.cards-card-body .button-container a').forEach((a, index) => {
     const picture = ul.querySelectorAll('picture')[index];
