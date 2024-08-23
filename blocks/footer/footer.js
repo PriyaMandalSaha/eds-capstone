@@ -25,7 +25,7 @@ export default async function decorate(block) {
   // footer.classList.add('footer-nav-brand');
   const footerNav = footer.querySelector('.footer-nav-sections');
   // const brandLink = footerNav.querySelector('.button');
-  if(footerNav) {
+  if (footerNav) {
     const brandFooterImage = document.createElement('img');
     const brandFooterLogoLink = document.createElement('a');
     brandFooterImage.src = '../../img/wknd-logo-light.svg';

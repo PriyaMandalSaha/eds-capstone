@@ -180,20 +180,20 @@ export default async function decorate(block) {
   block.append(navWrapper);
   block.prepend(navTop);
 
-  let scrollpos = window.scrollY
+  let scrollpos = window.scrollY;
   const headerNav = document.querySelector('nav');
   const header = document.querySelector('body');
-  const header_height = headerNav.offsetHeight;
+  const headerHeight = headerNav.offsetHeight;
 
-  const add_class_on_scroll = () => header.classList.add('scroll');
-  const remove_class_on_scroll = () => header.classList.remove('scroll');
+  const addClassOnScroll = () => header.classList.add('scroll');
+  const removeClassOnScroll = () => header.classList.remove('scroll');
 
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', () => {
     scrollpos = window.scrollY;
 
-    if (scrollpos >= header_height) {
-      add_class_on_scroll();
+    if (scrollpos >= headerHeight) {
+      addClassOnScroll();
     }
-    else { remove_class_on_scroll() }
+    else { removeClassOnScroll(); }
   });
 }
