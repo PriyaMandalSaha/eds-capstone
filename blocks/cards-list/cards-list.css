@@ -1,0 +1,79 @@
+/* Container for the list */
+.cards-list .cardslist-block {
+    display: block;
+    padding: 0;
+    list-style: none;
+}
+
+/* Each card container */
+.cards-list .cardslist-block ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 7px;
+}
+
+/* Links */
+.cards-list .cardslist-block .cards-card-body a {
+    color: var(--text-color,#202020);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.cards-list .cardslist-block .cards-card-body a:hover {
+    color: var(--text-color,#202020);
+    text-decoration: underline;
+}
+
+/* Image inside the card */
+.cards-list .cardslist-block .cards-card-image {
+    overflow: hidden;
+}
+
+.cards-list .cardslist-block .cards-card-image a:any-link {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.cards-list .cardslist-block .cards-card-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Card body (text content) */
+.cards-list .cardslist-block .cards-card-body {
+    margin: 16px 16px 16px 0;
+}
+
+.cards-list .cardslist-block .cards-card-body h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.cards-list .cardslist-block .cards-card-body p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1;
+}
+
+.cards-list .cardslist-block .cards-card-body p.card-paragraph{
+    color: dimgray;
+    display: block;
+    font-size: var(--font-size-small, 14px);
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 260px;
+  }
+
