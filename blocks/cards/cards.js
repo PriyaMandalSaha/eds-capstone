@@ -17,8 +17,10 @@ export default function decorate(block) {
 
   ul.querySelectorAll('picture > img').forEach((img) =>
     img.closest('picture').replaceWith(
-      createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]),
-    )
+      createOptimizedPicture(
+        img.src, img.alt, false, [{ width: '750' }]
+      ), // Added trailing comma here
+    ), // Removed the newline before the closing parenthesis
   );
 
   ul.querySelectorAll('.cards-card-body .button-container a').forEach((a, index) => {
