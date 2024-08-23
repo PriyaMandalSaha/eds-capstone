@@ -8,8 +8,8 @@
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  border: none;
+  background-color: transparent;
 }
 
 .cards .cards-card-body {
@@ -24,4 +24,27 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards .cards-card-image a.button:any-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.cards > ul > li .cards-card-image picture {
+  display: block;
+}
+
+.cards .cards-card-body .card-paragraph{
+  color: dimgray;
+  display: block;
+  font-size: var(--fontSizeSmall, 14px);
+  margin-top: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 260px;
 }
