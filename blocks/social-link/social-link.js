@@ -1,8 +1,8 @@
 export default function decorate(block) {
-  const mediaLinksDiv = block.querySelector('p');
+  const socialLinksDiv = block.querySelector('p');
 
-  if (mediaLinksDiv) {
-    const aTags = mediaLinksDiv.querySelectorAll('a');
+  if (socialLinksDiv) {
+    const aTags = socialLinksDiv.querySelectorAll('a');
 
     aTags.forEach((aTag) => {
       const title = aTag.getAttribute('title');
@@ -13,6 +13,6 @@ export default function decorate(block) {
       }
     });
 
-    block.append(mediaLinksDiv);
+    block.append(socialLinksDiv);
   }
 }

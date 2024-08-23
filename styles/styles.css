@@ -17,14 +17,14 @@
   --dark-color: #505050;
   --text-color: #202020;
   --link-color: #0045ff;
-  --link-hover-color: Invalid input color;
-  --overlay-background-color: #eeeeee;
-  --highlight-background-color: #cccccc;
-  --brandPrimary-color: #ffea00;
-  --background-color-b: #000000;
+  --link-hover-color: #0045ff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ccc;
+  --brand-primary-color: #ffea00;
+  --background-color-b: #000;
 
   /* fonts */
-  --heading-font-family: Asar, Georgia, "Times New Roman", Times, serif;
+  --heading-font-family: "Asar", Georgia, "Times New Roman", Times, serif;
   --body-font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
@@ -43,6 +43,7 @@
   --heading-font-size-s: 14px;
   --heading-font-size-xs: 10px;
   --nav-font-size-s: 14px;
+  --font-size-small: 12px;
 
   /* nav height */
   --nav-height: 64px;
@@ -125,7 +126,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--fontFamilySerif, "Asar", Georgia, "Times New Roman", Times, serif);
+  font-family: var(--heading-font-family, "Asar", Georgia, "Times New Roman", Times, serif);
   font-size: var(--heading-font-size-xl);
   margin-bottom: 13.5px;
     margin-top: 27px;
@@ -221,7 +222,7 @@ button {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--brandPrimary-color);
+  background-color: var(--brand-primary-color);
   color: var(--background-color-b);
   cursor: pointer;
   overflow: hidden;
@@ -234,7 +235,7 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--brandPrimary-color);
+  background-color: var(--brand-primary-color);
   cursor: pointer;
 }
 

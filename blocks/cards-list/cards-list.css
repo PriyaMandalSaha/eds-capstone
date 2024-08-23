@@ -54,7 +54,7 @@
 .cards-list .cardslist-block .cards-card-body p.card-paragraph{
     color: dimgray;
     display: block;
-    font-size: var(--fontSizeSmall, 14px);
+    font-size: var(--font-size-small, 14px);
     margin-top: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -65,7 +65,7 @@
 
 /* Links */
 .cards-list .cardslist-block .cards-card-body a {
-    color: var(--textColor,#202020);
+    color: var(--text-color,#202020);
     text-decoration: none;
     transition: color 0.3s ease;
     text-transform: uppercase;
@@ -73,6 +73,6 @@
 }
 
 .cards-list .cardslist-block .cards-card-body a:hover {
-    color: var(--textColor,#202020);
+    color: var(--text-color,#202020);
     text-decoration: underline;
 }
