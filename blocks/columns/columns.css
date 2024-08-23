@@ -30,16 +30,19 @@ p {
 .columns > div > .columns-img-col {
   order: 0;
 }
+
 .columns > div > .columns-img-col picture {
   width: 710px;
   display: block;
   height: 510px;
 }
+
 .columns > div > .columns-img-col img {
   width: 710px;
   display: block;
   height: 510px;
 }
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;

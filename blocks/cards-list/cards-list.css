@@ -15,6 +15,20 @@
     grid-gap: 7px;
 }
 
+/* Links */
+.cards-list .cardslist-block .cards-card-body a {
+    color: var(--text-color,#202020);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.cards-list .cardslist-block .cards-card-body a:hover {
+    color: var(--text-color,#202020);
+    text-decoration: underline;
+}
+
 /* Image inside the card */
 .cards-list .cardslist-block .cards-card-image {
     overflow: hidden;
@@ -63,16 +77,3 @@
     width: 260px;
   }
 
-/* Links */
-.cards-list .cardslist-block .cards-card-body a {
-    color: var(--text-color,#202020);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-    background-color: transparent;
-}
-
-.cards-list .cardslist-block .cards-card-body a:hover {
-    color: var(--text-color,#202020);
-    text-decoration: underline;
-}
