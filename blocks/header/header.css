@@ -245,6 +245,7 @@ header .nav-top .button-container a.button:any-link {
   padding: 0px 20px;
   line-height: 1;
   font-size: var(--body-font-size-xs);
+  color: var(--light-color);
 }
 
 @media (width >= 900px) {

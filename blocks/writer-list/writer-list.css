@@ -1,0 +1,72 @@
+.writer-list > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-gap: 24px;
+}
+
+.writer-list > ul > li {
+  background-color: transparent;
+}
+
+.writer-list .writer-list-body {
+  margin: 16px 16px 16px 0;
+  text-align: center;
+}
+
+.writer-list .writer-list-image {
+  line-height: 0;
+  text-align: center;
+}
+
+.writer-list > ul > li img {
+  width: 164px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 50%;
+  height: 164px;
+}
+
+.writer-list .writer-list-body p strong {
+  color: var(--text-color);
+}
+
+.writer-list .writer-list-image a.button:any-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.writer-list > ul > li .writer-list-image picture {
+  display: block;
+}
+
+.writer-list .writer-list-body a {
+  margin: 0px;
+  padding: 0px;
+  color: var(--textColor,#202020);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.writer-list .writer-list-body a:hover {
+  color: var(--textColor,#202020);
+  text-decoration: underline;
+}
+
+.writer-list .writer-list-body h3 {
+  font-family: var(--fontFamilySerif, "Asar", Georgia, "Times New Roman", Times, serif);
+  font-weight: normal;
+  margin-bottom: .25em;
+  margin-top: 0;
+}
+
+.writer-list .writer-list-body h5 {
+  margin-bottom: .25em;
+  margin-top: 0;
+}

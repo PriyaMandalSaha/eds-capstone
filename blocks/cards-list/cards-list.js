@@ -52,7 +52,9 @@ async function createDivStructure(jsonURL) {
   const json = await resp.json();
 
   const ul = document.createElement('ul');
-  json.data.forEach((row) => {
+  const filteredData = json.data.filter((row) => row.template);
+
+  filteredData.forEach((row) => {
     createRowDiv(ul, row);
   });
 
