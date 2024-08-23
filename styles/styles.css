@@ -22,13 +22,15 @@
   --highlight-background-color: #ccc;
   --brand-primary-color: #ffea00;
   --background-color-b: #000;
+  --opecity-color-42: #00000042;
 
   /* fonts */
-  --heading-font-family: "Asar", Georgia, "Times New Roman", Times, serif;
-  --body-font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
+  --heading-font-family: "Asar", georgia, "Times New Roman", times, serif;
+  --body-font-family: "Source Sans Pro", "Helvetica Neue", helvetica, arial,
     sans-serif;
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
     monospace;
+  --font-weight-bold: 600;
 
   /* body sizes */
   --body-font-size-m: 18px;
@@ -129,10 +131,11 @@ h2 {
   font-family: var(--heading-font-family, "Asar", Georgia, "Times New Roman", Times, serif);
   font-size: var(--heading-font-size-xl);
   margin-bottom: 13.5px;
-    margin-top: 27px;
+  margin-top: 27px;
 }
-h2:after {
-  border-bottom: 2px solid var(--brandPrimary, #ffea00);
+
+h2::after {
+  border-bottom: 2px solid var(--brand-primary-color, #ffea00);
   content: "";
   display: block;
   padding-top: 8px;
@@ -151,8 +154,8 @@ h4 {
 
 h5 {
   font-size: var(--heading-font-size-s);
-  font-family: var(--fontFamilySansSerif, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif);
-  font-weight: var(--fontWeightBold, 600);
+  font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
+  font-weight: var(--font-weight-bold, 600);
   text-transform: uppercase;
 }
 

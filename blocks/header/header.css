@@ -14,10 +14,6 @@ header .nav-wrapper {
   width: 100%;
 }
 
-.cmp-layoutcontainer--header {
-  background-color: var(--background-color);
-}
-
 /* stylelint-disable-next-line property-no-vendor-prefix */
 header .nav-wrapper .nav-container {
   margin-top: 0;
@@ -32,8 +28,8 @@ header .nav-wrapper .nav-container {
 .scroll header .nav-wrapper .nav-container {
   padding-bottom: 15px;
   padding-top: 15px;
-  -webkit-box-shadow: 0 8px 20px 0 rgba(0,0,0,26%);
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 26%);
+  -webkit-box-shadow: 0 8px 20px 0 var(--opecity-color-42);
+  box-shadow: 0 8px 20px 0 var(--opecity-color-42);
   -webkit-transition: padding-bottom .5s ease,padding-top .5s;
   -webkit-transition: padding-bottom .5s ease-out,padding-top .5s ease ease-out .25s;
   transition: padding-bottom 0.5s ease-out, padding-top 0.5s ease ease-out 0.25s;
