@@ -1,7 +1,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
@@ -17,10 +16,9 @@ export default function decorate(block) {
   });
 
   ul.querySelectorAll('picture > img').forEach((img) =>
-    img.closest('picture').replaceWith(createOptimizedPicture(
-    img.src, img.alt, false,
-      [{ width: '750' }]
-    ))
+    img.closest('picture').replaceWith(
+      createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]),
+    )
   );
 
   ul.querySelectorAll('.cards-card-body .button-container a').forEach((a, index) => {
@@ -32,7 +30,7 @@ export default function decorate(block) {
     }
   });
 
-  ul.querySelectorAll('.cards-card-body').forEach(container => {
+  ul.querySelectorAll('.cards-card-body').forEach((container) => {
     const paragraphs = container.querySelectorAll('p');
     if (paragraphs.length >= 2) {
       paragraphs[1].classList.add('card-paragraph');

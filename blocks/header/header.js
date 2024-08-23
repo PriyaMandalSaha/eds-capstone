@@ -193,8 +193,7 @@ export default async function decorate(block) {
 
     if (scrollpos >= headerHeight) {
       addClassOnScroll();
-    }
-    else {
+    } else {
       removeClassOnScroll();
     }
   });
