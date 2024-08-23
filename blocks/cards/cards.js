@@ -17,8 +17,10 @@ export default function decorate(block) {
   });
 
   ul.querySelectorAll('picture > img').forEach((img) =>
-    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false,
-    [{ width: '750' }]))
+    img.closest('picture').replaceWith(createOptimizedPicture(
+    img.src, img.alt, false,
+      [{ width: '750' }]
+    ))
   );
 
   ul.querySelectorAll('.cards-card-body .button-container a').forEach((a, index) => {
