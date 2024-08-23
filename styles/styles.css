@@ -23,6 +23,7 @@
   --brand-primary-color: #ffea00;
   --background-color-b: #000;
   --opecity-color-42: #00000042;
+  --background-color-light: #ebebeb;
 
   /* fonts */
   --heading-font-family: "Asar", georgia, "Times New Roman", times, serif;
@@ -150,6 +151,7 @@ h3 {
 
 h4 {
   font-size: var(--heading-font-size-m);
+  font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
 }
 
 h5 {
@@ -220,7 +222,7 @@ button {
   border-radius: 0;
   padding: 0.5em 1.2em;
   font-family: var(--body-font-family);
-  font-style: var(--body-font-size-s, 14px);
+  font-size: var(--body-font-size-s, 14px);
   font-weight: 600;
   line-height: 1.25;
   text-align: center;

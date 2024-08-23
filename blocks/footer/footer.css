@@ -45,6 +45,7 @@ footer .footer .section.footer-nav-sections ul > li {
   margin: 10px 0;
   font-size: var(--nav-font-size-s);
 }
+
 footer .footer .section.footer-nav-sections ul > li > a {
   color: var(--light-color, #ebebeb);
   padding: 15px 17px;
