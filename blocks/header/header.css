@@ -15,7 +15,6 @@ header .nav-wrapper {
   width: 100%;
 }
 
-/* stylelint-disable-next-line property-no-vendor-prefix */
 header .nav-wrapper .nav-container {
   margin-top: 0;
   padding-bottom: 50px;
@@ -25,7 +24,6 @@ header .nav-wrapper .nav-container {
   transition: padding-bottom 0s ease-out, padding-top 0s ease ease-out 0s;
 }
 
-/* stylelint-disable-next-line property-no-vendor-prefix */
 .scroll header .nav-wrapper .nav-container {
   padding-bottom: 15px;
   padding-top: 15px;
