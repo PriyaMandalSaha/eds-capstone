@@ -35,7 +35,6 @@
   justify-content: flex-end;
   position: relative;
   width: 100%;
-  /* min-height: min(60vw, calc(100dvh - var(--header-height))); */
   min-height: 700px;
 }
 
@@ -74,7 +73,6 @@
   justify-content: center;
   gap: 6px 12px;
   padding: 12px;
-  /* background-color: var(--light-color); */
   line-height: 0;
 }
 
@@ -145,8 +143,6 @@
 
   .carousel .carousel-slide .carousel-slide-content {
     --slide-content-width: calc((100% - 0) / 2);
-
-    /* margin: 92px; */
   }
 
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {

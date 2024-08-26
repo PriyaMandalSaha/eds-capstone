@@ -336,7 +336,7 @@ main .section.highlight {
 }
 
 .wkndicon {
-    font-family: "Wkndicons";
+    font-family: Wkndicons, sans-serif;
     font-style: normal;
     font-weight: normal;
     display: inline-block;
