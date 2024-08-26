@@ -140,7 +140,6 @@
 }
 
 @media (width >= 600px) {
-
   .carousel .carousel-slide .carousel-slide-content {
     --slide-content-width: calc((100% - 0) / 2);
   }
