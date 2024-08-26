@@ -20,8 +20,6 @@
   .form input,
   .form textarea,
   .form select {
-    border: solid 1px var(--bg-color-grey);
-    padding: var(--spacing-xxs) var(--spacing-xs);
     width: 100%;
     max-width: 50rem;
     box-sizing: border-box;
@@ -29,6 +27,9 @@
     font-size: var(--type-body-s-size);
     line-height: var(--type-body-s-lh);
     font-family: var(--body-font-family);
+    border: solid 1px var(--text-color);
+    margin: 5px 0;
+    padding: 10px;
   }
 
   .form textarea {
@@ -41,11 +42,11 @@
   }
 
   .form label {
-    display: block;
     padding-bottom: var(--spacing-xxs);
     box-sizing: border-box;
     font-size: var(--type-body-s-size);
     line-height: var(--type-body-s-lh);
+    display: none;
   }
 
   .form label.required::after {

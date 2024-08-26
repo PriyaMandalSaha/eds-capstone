@@ -47,15 +47,20 @@
 .writer-list .writer-list-body a {
   margin: 0;
   padding: 0;
-  color: var(--text-color,#202020);
+  color: var(--light-color);
   text-decoration: none;
   transition: color 0.3s ease;
   text-transform: uppercase;
-  background-color: transparent;
+  font-family: Wkndicons, sans-serif !important;
+  width: 48px;
+  height: 48px;
+  background-color: var(--text-color);
+  display: inline-block;
+  overflow: hidden;
 }
 
 .writer-list .writer-list-body a:hover {
-  color: var(--text-color,#202020);
+  color: var(--light-color);
   text-decoration: underline;
 }
 
@@ -69,4 +74,20 @@
 .writer-list .writer-list-body h5 {
   margin-bottom: .25em;
   margin-top: 0;
+}
+
+.writer-list .writer-list-body a .icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px 0;
+}
+
+.writer-list .writer-list-body a .icon::before {
+  font-size: 18px;
+}
+
+.writer-list .writer-list-body a .icon-facebook-link img,
+.writer-list .writer-list-body a .icon-twitter-link img,
+.writer-list .writer-list-body a .icon-instagram-link img {
+  display: none;
 }
