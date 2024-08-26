@@ -45,6 +45,8 @@
   transition: color 0.3s ease;
   text-transform: uppercase;
   background-color: transparent;
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif);
 }
 
 .cards .cards-card-body a:hover {
