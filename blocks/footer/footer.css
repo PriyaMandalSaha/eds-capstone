@@ -1,16 +1,59 @@
 footer {
-  background-color: var(--light-color);
+  background-color: var(--text-color);
   font-size: var(--body-font-size-xs);
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
+  max-width: 1264px;
   padding: 40px 24px 24px;
 }
 
 footer .footer p {
+  margin: 0 0 10px;
+  font-size: var(--body-font-size-s);
+  color: var(--light-color, #ebebeb);
+  font-family: var(--body-font-family);
+}
+
+footer .footer p a {
+  font-size: var(--body-font-size-s);
+  color: var(--light-color, #ebebeb);
+  font-family: var(--body-font-family);
+  text-decoration: underline;
+}
+
+footer .footer .footer-logo-img {
+  width: 128px;
+  height: auto;
+}
+
+footer .footer .section.footer-nav-sections {
+  display: flex;
+  align-content: center;
+  margin-bottom: 35px;
+}
+
+footer .footer .section.footer-nav-sections ul {
   margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+footer .footer .section.footer-nav-sections ul > li {
+  margin: 10px 0;
+  font-size: var(--nav-font-size-s);
+}
+
+footer .footer .section.footer-nav-sections ul > li > a {
+  color: var(--light-color, #ebebeb);
+  padding: 15px 17px;
+}
+
+footer .footer .section.footer-nav-sections ul > li > a:hover {
+  text-decoration: underline;
+  padding: 15px 17px;
 }
 
 @media (width >= 900px) {
