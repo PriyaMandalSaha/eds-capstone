@@ -87,7 +87,7 @@ header nav p {
 
 header nav a:any-link {
   color: var(--text-color, #202020);
-  font-size: var(--font-size-small, 14px);
+  font-size: var(--nav-font-size-s);
   padding: 15px 17px;
   text-decoration: none;
   text-transform: uppercase;
@@ -339,6 +339,7 @@ header nav .nav-tools {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding-top: 15px;
 }
 
 header nav .nav-tools .nav-tool {
