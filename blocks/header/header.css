@@ -55,6 +55,7 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+  margin: 0 auto;
 }
 
 header .nav-brand .button-container {
