@@ -30,21 +30,7 @@
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
-</head>
-
-<body>
-  <header></header>
-  <main class="error">
-    <div class="section">
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
-        <!-- New Button to the Homepage -->
-        <a href="/home" class="button secondary error-button-home">Return to Homepage</a>
-      </p>
-    </div>
-  </main>
-  <footer></footer>
+  
   <script type="text/javascript">
     window.isErrorPage = true;
     window.errorCode = '404';
@@ -81,6 +67,21 @@
     sampleRUM('404', { source: document.referrer });
   </script>
   <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
+</head>
+
+<body>
+  <header></header>
+  <main class="error">
+    <div class="section">
+      <h2 class="error-message">Page Not Found</h2>
+      <p class="button-container">
+        <a href="/" class="button secondary error-button-home">Go home</a>
+        <!-- New Button to the Homepage -->
+        <a href="/home" class="button secondary error-button-home">Return to Homepage</a>
+      </p>
+    </div>
+  </main>
+  <footer></footer>
 </body>
 
 </html>
