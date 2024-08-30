@@ -6,10 +6,7 @@
   <meta name="description" content="The page you're looking for cannot be found.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Page not found">
-  <script type="text/javascript">
-    window.isErrorPage = true;
-    window.errorCode = '404';
-  </script>
+
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
     main.error {
@@ -25,6 +22,11 @@
 
     main.error .error-number text {
       font-family: monospace;
+    }
+
+    main.error h2.error-message {
+      width: fit-content;
+      margin: 0 auto;
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
@@ -43,6 +45,10 @@
     </div>
   </main>
   <footer></footer>
+  <script type="text/javascript">
+    window.isErrorPage = true;
+    window.errorCode = '404';
+  </script>
   <script type="module">
     window.addEventListener('load', () => {
       if (document.referrer) {
