@@ -9,7 +9,7 @@
 }
 
 .columns > div > div {
-  order: 1;
+  order: 0;
 }
 
 .columns > div > div:last-of-type {
@@ -29,7 +29,7 @@ p {
 }
 
 .columns > div > .columns-img-col {
-  order: 0;
+  order: 1;
 }
 
 .columns > div > .columns-img-col picture {
@@ -44,10 +44,14 @@ p {
   height: auto;
 }
 
+.columns > div > div:last-of-type > p {
+  font-size: 18px;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
-    flex-direction: unset;
+    flex-direction: row;
     gap: 5px;
   }
 
@@ -56,9 +60,53 @@ p {
     order: unset;
   }
 
+  .columns > div > .columns-img-col {
+    order: 0;
+  }
+
+  .columns > div > .columns-img-col picture {
+    width: 580px;
+    display: block;
+    height: 540px;
+  }
+
+  .columns > div > .columns-img-col img {
+    width: 100%;
+    display: block;
+    height: 540px;
+  }
+  .columns > div > div:last-of-type h2 {
+    margin-top: 0px;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .columns > div > div:last-of-type {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+}
+
+@media (width >= 1120px) {
   .columns > div > .columns-img-col picture {
     width: 710px;
     display: block;
     height: 510px;
+  }
+
+  .columns > div > .columns-img-col img {
+    width: 100%;
+    display: block;
+    height: 510px;
+  }
+
+  .columns > div > div:last-of-type h2 {
+    margin-top: 27px;
+    font-size: 36px;
+  }
+
+  .columns > div > div:last-of-type {
+    padding-left: 2em;
+    padding-right: 0.75em;
   }
 }
