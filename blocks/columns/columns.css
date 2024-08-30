@@ -75,8 +75,9 @@ p {
     display: block;
     height: 540px;
   }
+
   .columns > div > div:last-of-type h2 {
-    margin-top: 0px;
+    margin-top: 0;
     font-size: 24px;
     margin-bottom: 0;
   }
