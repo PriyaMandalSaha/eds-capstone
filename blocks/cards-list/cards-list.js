@@ -10,7 +10,7 @@ async function createRowDiv(container, row) {
 
   // Create the link that wraps the image
   const imageLink = document.createElement('a');
-  imageLink.href = row.url;
+  imageLink.href = row.path;
   imageLink.title = row.title;
 
   // Create the optimized picture element
@@ -26,7 +26,7 @@ async function createRowDiv(container, row) {
 
   // Create the link for the title
   const titleLink = document.createElement('a');
-  titleLink.href = row.url;
+  titleLink.href = row.path;
   titleLink.title = row.title;
   titleLink.textContent = row.title;
 
