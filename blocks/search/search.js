@@ -111,7 +111,6 @@ function renderResult(result, searchTerms, titleTag) {
     a.append(description);
   }
   li.append(a);
-  console.log(" result.path",  result.path)
   return li;
 }
 
@@ -218,7 +217,6 @@ async function handleSearch(e, block, config) {
   const filteredData = filterData(searchTerms, data);
   await renderResults(block, config, filteredData, searchTerms);
 }
-
 
 function searchResultsContainer(block) {
   const results = document.createElement('ul');
