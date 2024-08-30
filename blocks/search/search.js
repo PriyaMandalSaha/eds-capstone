@@ -111,6 +111,7 @@ function renderResult(result, searchTerms, titleTag) {
     a.append(description);
   }
   li.append(a);
+  console.log(" result.path",  result.path)
   return li;
 }
 
@@ -160,9 +161,10 @@ function filterData(searchTerms, data) {
     let minIdx = -1;
 
     searchTerms.forEach((term) => {
-      const idx = (result.header || result.title).toLowerCase().indexOf(term);
+      const text = (result.header || result.title || '').toLowerCase();
+      const idx = text.indexOf(term.toLowerCase());
       if (idx < 0) return;
-      if (minIdx < idx) minIdx = idx;
+      if (minIdx < 0 || idx < minIdx) minIdx = idx;
     });
 
     if (minIdx >= 0) {
@@ -170,7 +172,8 @@ function filterData(searchTerms, data) {
       return;
     }
 
-    const metaContents = `${result.title} ${result.description} ${result.path.split('/').pop()}`.toLowerCase();
+    const pathFragment = typeof result.path === 'string' ? result.path.split('/').pop() : '';
+    const metaContents = `${(result.title || '')} ${(result.description || '')} ${pathFragment}`.toLowerCase();
     searchTerms.forEach((term) => {
       const idx = metaContents.indexOf(term);
       if (idx < 0) return;
@@ -189,8 +192,16 @@ function filterData(searchTerms, data) {
 }
 
 async function handleSearch(e, block, config) {
-  const searchValue = e.target.value;
+  const searchValue = e.target.value.trim();
   searchParams.set('q', searchValue);
+
+  if (searchValue.length >= 3) {
+    const url = new URL('/search', window.location.origin);
+    url.searchParams.set('q', searchValue);
+    window.location.href = url.toString();
+    return;
+  }
+
   if (window.history.replaceState) {
     const url = new URL(window.location.href);
     url.search = searchParams.toString();
@@ -207,6 +218,7 @@ async function handleSearch(e, block, config) {
   const filteredData = filterData(searchTerms, data);
   await renderResults(block, config, filteredData, searchTerms);
 }
+
 
 function searchResultsContainer(block) {
   const results = document.createElement('ul');

@@ -14,6 +14,7 @@
 
 .columns > div > div:last-of-type {
   padding-left: 2em;
+  padding-right: 0.75em;
 }
 
 .columns > div > div:last-of-type h4 {
@@ -32,15 +33,15 @@ p {
 }
 
 .columns > div > .columns-img-col picture {
-  width: 710px;
+  width: 100%;
   display: block;
-  height: 510px;
+  height: auto;
 }
 
 .columns > div > .columns-img-col img {
-  width: 710px;
+  width: 100%;
   display: block;
-  height: 510px;
+  height: auto;
 }
 
 @media (width >= 900px) {
@@ -53,5 +54,10 @@ p {
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+  .columns > div > .columns-img-col picture {
+    width: 710px;
+    display: block;
+    height: 510px;
   }
 }
