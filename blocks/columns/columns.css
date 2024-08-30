@@ -55,6 +55,7 @@ p {
     flex: 1;
     order: unset;
   }
+
   .columns > div > .columns-img-col picture {
     width: 710px;
     display: block;
