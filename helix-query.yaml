@@ -28,5 +28,5 @@ indices:
             attribute(el, 'content')
         robots:
           select: head > meta[name="robots"]
-            value: |
-              attribute(el, 'content')
+          value: |
+            attribute(el, 'content')
