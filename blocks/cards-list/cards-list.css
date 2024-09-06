@@ -6,7 +6,7 @@
 }
 
 /* Each card container */
-.cards-list .cards-list-block ul {
+.cards-list .cards-list-container ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@
 }
 
 /* Links */
-.cards-list .cards-list-block .cards-list-body a {
+.cards-list .cards-list-container .cards-list-body a {
     color: var(--text-color,#202020);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -26,24 +26,24 @@
     font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif);
 }
 
-.cards-list .cards-list-block .cards-list-body a:hover {
+.cards-list .cards-list-container .cards-list-body a:hover {
     color: var(--text-color,#202020);
     text-decoration: underline;
 }
 
 /* Image inside the card */
-.cards-list .cards-list-block .cards-list-image {
+.cards-list .cards-list-container .cards-list-image {
     overflow: hidden;
 }
 
-.cards-list .cards-list-block .cards-list-image a:any-link {
+.cards-list .cards-list-container .cards-list-image a:any-link {
     background: none;
     margin: 0;
     padding: 0;
     border-radius: 0;
 }
 
-.cards-list .cards-list-block .cards-list-image img {
+.cards-list .cards-list-container .cards-list-image img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
@@ -51,23 +51,23 @@
 }
 
 /* Card body (text content) */
-.cards-list .cards-list-block .cards-list-body {
+.cards-list .cards-list-container .cards-list-body {
     margin: 16px 16px 16px 0;
 }
 
-.cards-list .cards-list-block .cards-list-body h3 {
+.cards-list .cards-list-container .cards-list-body h3 {
     font-size: 1.5em;
     margin: 10px 0;
     font-weight: 600;
 }
 
-.cards-list .cards-list-block .cards-list-body p {
+.cards-list .cards-list-container .cards-list-body p {
     font-size: 1em;
     color: #666;
     line-height: 1;
 }
 
-.cards-list .cards-list-block .cards-list-body p.cards-list-paragraph{
+.cards-list .cards-list-container .cards-list-body p.cards-list-paragraph{
     color: dimgray;
     display: block;
     font-size: var(--font-size-small, 14px);

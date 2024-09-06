@@ -64,7 +64,7 @@ async function createDivStructure(jsonURL) {
 export default async function decorate(block) {
   const countriesLink = block.querySelector('a[href$=".json"]');
   const parentDiv = document.createElement('div');
-  parentDiv.classList.add('cards-list-block');
+  parentDiv.classList.add('cards-list-container');
 
   if (countriesLink) {
     const initialContent = await createDivStructure(countriesLink.href);
