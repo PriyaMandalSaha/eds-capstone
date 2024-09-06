@@ -1,5 +1,5 @@
 import createTag from './tag.js';
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture } from '../scripts/aem.js';
 
 /**
  * * @param {HTMLElement} element the element with the parent undesired wrapper, like <p></p>
