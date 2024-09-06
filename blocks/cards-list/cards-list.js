@@ -1,75 +1,65 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-async function createRowDiv(container, row) {
-  // Create the li element
-  const li = document.createElement('li');
+async function createHtmlFromData(template, data, target) {
+  const fragment = document.createDocumentFragment();
 
-  // Create the image container div
-  const imageDiv = document.createElement('div');
-  imageDiv.classList.add('cards-list-image');
+  data.forEach((row) => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = template
+      .replace(/{{path}}/g, row.path)
+      .replace(/{{title}}/g, row.title)
+      .replace(/{{description}}/g, row.description);
 
-  // Create the link that wraps the image
-  const imageLink = document.createElement('a');
-  imageLink.href = row.path;
-  imageLink.title = row.title;
-
-  // Create the optimized picture element
-  const optimizedPicture = createOptimizedPicture(row.image, row.title, false, [{ width: '750' }]);
-
-  // Append the optimized picture to the link
-  imageLink.appendChild(optimizedPicture);
-  imageDiv.appendChild(imageLink);
-
-  // Create the body container div
-  const bodyDiv = document.createElement('div');
-  bodyDiv.classList.add('cards-list-body');
-
-  // Create the link for the title
-  const titleLink = document.createElement('a');
-  titleLink.href = row.path;
-  titleLink.title = row.title;
-  titleLink.textContent = row.title;
-
-  // Create the paragraph for the description
-  const description = document.createElement('p');
-  description.classList.add('cards-list-paragraph');
-  description.textContent = row.description;
-
-  bodyDiv.appendChild(titleLink);
-  bodyDiv.appendChild(description);
-
-  // Append the image and body divs to the li
-  li.appendChild(imageDiv);
-  li.appendChild(bodyDiv);
-
-  // Append the li to the container (ul)
-  container.appendChild(li);
-}
-
-async function createDivStructure(jsonURL) {
-  const url = new URL(jsonURL);
-  const resp = await fetch(url);
-  const json = await resp.json();
-
-  const ul = document.createElement('ul');
-  const filteredData = json.data.filter((row) => row.template === 'Magazine');
-
-  filteredData.forEach((row) => {
-    createRowDiv(ul, row);
+    const pictureElement = createOptimizedPicture(row.image, row.title, false, [{ width: '750' }]);
+    const imageContainer = tempDiv.querySelector('.cards-list-image a');
+    if (imageContainer) {
+      imageContainer.appendChild(pictureElement);
+    }
+    fragment.appendChild(tempDiv.firstElementChild);
   });
 
-  return ul;
+  target.appendChild(fragment);
+}
+
+async function fetchDataAndRender(jsonURL, target) {
+  try {
+    const response = await fetch(jsonURL);
+    if (!response.ok) {
+      return; // Handle fetch error by exiting if response is not OK
+    }
+
+    const json = await response.json();
+
+    const template = `
+      <li>
+        <div class="cards-list-image">
+          <a href="{{path}}" title="{{title}}">
+            <!-- Optimized picture will be inserted here -->
+          </a>
+        </div>
+        <div class="cards-list-body">
+          <a href="{{path}}" title="{{title}}">{{title}}</a>
+          <p class="cards-list-paragraph">{{description}}</p>
+        </div>
+      </li>`;
+
+    const filteredData = json.data.filter((row) => row.template === 'Magazine');
+
+    createHtmlFromData(template, filteredData, target);
+  } catch {
+    // Handle error silently without console logs
+  }
 }
 
 export default async function decorate(block) {
-  const countriesLink = block.querySelector('a[href$=".json"]');
-  const parentDiv = document.createElement('div');
-  parentDiv.classList.add('cards-list-container');
+  const dataList = block.querySelector('a[href$=".json"]');
+  const ulElement = document.createElement('ul'); // Create ul element
 
-  if (countriesLink) {
-    const initialContent = await createDivStructure(countriesLink.href);
-
-    parentDiv.append(initialContent);
-    countriesLink.replaceWith(parentDiv);
+  if (dataList) {
+    await fetchDataAndRender(dataList.href, ulElement);
+    const parentDiv = document.createElement('div');
+    parentDiv.classList.add('cards-list-container');
+    parentDiv.appendChild(ulElement);
+    dataList.replaceWith(parentDiv);
   }
 }

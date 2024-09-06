@@ -23,12 +23,12 @@
     text-transform: uppercase;
     background-color: transparent;
     font-size: var(--body-font-size-m);
+    font-weight: 600;
     font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif);
 }
 
 .cards-list .cards-list-container .cards-list-body a:hover {
     color: var(--text-color,#202020);
-    text-decoration: underline;
 }
 
 /* Image inside the card */
