@@ -1,4 +1,5 @@
 import createTag from './tag.js';
+import { createOptimizedPicture } from '../scripts/aem.js';
 
 /**
  * * @param {HTMLElement} element the element with the parent undesired wrapper, like <p></p>
@@ -166,6 +167,40 @@ export function addInViewAnimationToMultipleElements(animatedItems, triggerEleme
   addInviewObserverToTriggerElement(triggerElement);
 }
 
+/**
+ * Populates an HTML template string with data and appends the result to a target element.
+ * @param {string} template - The HTML template string with placeholders.
+ * @param {Array} data - The array of data objects used to populate the template.
+ * @param {HTMLElement} target - The DOM element where the populated template will be appended.
+ */
+export function createHtmlFromData(template, data, target) {
+  // Create a document fragment to hold the generated content
+  const fragment = document.createDocumentFragment();
+
+  // Loop through the data and populate the template
+  data.forEach((row) => {
+    // Use a temporary div to parse and create elements from the string template
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = template
+      .replace(/{{path}}/g, row.path)
+      .replace(/{{title}}/g, row.title)
+      .replace(/{{description}}/g, row.description);
+
+    // Fetch the picture container and replace it with the optimized picture
+    const pictureElement = createOptimizedPicture(row.image, row.title, false, [{ width: '750' }]);
+    const imageContainer = tempDiv.querySelector('.cards-list-image a');
+    if (imageContainer) {
+      imageContainer.appendChild(pictureElement);
+    }
+
+    // Append the populated template to the document fragment
+    fragment.appendChild(tempDiv.firstElementChild);
+  });
+
+  // Append the complete fragment to the target element in the DOM
+  target.appendChild(fragment);
+}
+
 export default {
   removeOuterElementLayer,
   changeTag,
@@ -173,4 +208,5 @@ export default {
   addInViewAnimationToSingleElement,
   addInViewAnimationToMultipleElements,
   addInviewObserverToTriggerElement,
+  createHtmlFromData,
 };
