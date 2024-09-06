@@ -1,25 +1,4 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
-async function createHtmlFromData(template, data, target) {
-  const fragment = document.createDocumentFragment();
-
-  data.forEach((row) => {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = template
-      .replace(/{{path}}/g, row.path)
-      .replace(/{{title}}/g, row.title)
-      .replace(/{{description}}/g, row.description);
-
-    const pictureElement = createOptimizedPicture(row.image, row.title, false, [{ width: '750' }]);
-    const imageContainer = tempDiv.querySelector('.cards-list-image a');
-    if (imageContainer) {
-      imageContainer.appendChild(pictureElement);
-    }
-    fragment.appendChild(tempDiv.firstElementChild);
-  });
-
-  target.appendChild(fragment);
-}
+import { createHtmlFromData } from '../../utils/helper.js';
 
 async function fetchDataAndRender(jsonURL, target) {
   try {
