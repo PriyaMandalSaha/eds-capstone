@@ -6,7 +6,7 @@ async function createRowDiv(container, row) {
 
   // Create the image container div
   const imageDiv = document.createElement('div');
-  imageDiv.classList.add('cards-card-image');
+  imageDiv.classList.add('cards-list-image');
 
   // Create the link that wraps the image
   const imageLink = document.createElement('a');
@@ -22,7 +22,7 @@ async function createRowDiv(container, row) {
 
   // Create the body container div
   const bodyDiv = document.createElement('div');
-  bodyDiv.classList.add('cards-card-body');
+  bodyDiv.classList.add('cards-list-body');
 
   // Create the link for the title
   const titleLink = document.createElement('a');
@@ -32,7 +32,7 @@ async function createRowDiv(container, row) {
 
   // Create the paragraph for the description
   const description = document.createElement('p');
-  description.classList.add('card-paragraph');
+  description.classList.add('cards-list-paragraph');
   description.textContent = row.description;
 
   bodyDiv.appendChild(titleLink);
@@ -64,7 +64,7 @@ async function createDivStructure(jsonURL) {
 export default async function decorate(block) {
   const countriesLink = block.querySelector('a[href$=".json"]');
   const parentDiv = document.createElement('div');
-  parentDiv.classList.add('cardslist-block');
+  parentDiv.classList.add('cards-list-block');
 
   if (countriesLink) {
     const initialContent = await createDivStructure(countriesLink.href);
